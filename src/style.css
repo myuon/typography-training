@@ -38,12 +38,13 @@ p {
 
 @media screen and (min-width: 1280px) {
   /* 文章の横幅が長いと読むのがしんどいので適当に詰める */
-  p {
+  p,
+  hr {
     width: 960px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280) {
   /* 画面が小さいと横幅狭すぎて読みにくいので全体にpadding */
   article.container {
     padding: 0 32px;
