@@ -1,0 +1,97 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+h3::before {
+  content: counter(section) ". ";
+  counter-increment: section;
+}
+
+/* 課題ここから */
+body {
+  color: #333333;
+
+  /* 画面で本を読むという想定なのでserif系に */
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+section.container {
+  /* デフォルトでかかってるpadding-leftがクソダサいので削除 */
+  padding: 26px 0px;
+}
+
+section.container > pre {
+  /* preブロックはキツめにかける(font-sizeの16px分) */
+  padding-left: 16px;
+}
+
+p {
+  /* 基準値をfont-size: 16pxで固定 */
+  font-size: 16px;
+
+  /* 16 * 1.618 ≒ 26px なので、Vertical Rhythmも13px単位で計算　*/
+  line-height: 26px;
+  margin: 26px 0;
+  text-align: justify;
+  letter-spacing: 0.25px;
+}
+
+@media screen and (min-width: 1280px) {
+  /* 文章の横幅が長いと読むのがしんどいので適当に詰める */
+  p {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* 画面が小さいと横幅狭すぎて読みにくいので全体にpadding */
+  article.container {
+    padding: 0 32px;
+  }
+
+  p {
+    padding-right: 8px;
+  }
+}
+
+pre {
+  font-size: 14px;
+
+  line-height: 26px;
+  margin: 26px 0;
+  letter-spacing: 0.25px;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 39px;
+  margin: 26px 0;
+
+  /* マイPC環境だとひらがなのカーニングがぶっ壊れているため最適値がよくわからない、KDEが悪いのかフォントが悪いのか果たして */
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 52px;
+  margin: 13px 0;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 78px;
+  margin: 26px 0;
+  letter-spacing: -1.5px;
+}
+
+hr {
+  margin: 39px 0;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
