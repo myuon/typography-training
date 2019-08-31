@@ -16,19 +16,13 @@ body {
 }
 
 section.container {
-  /* デフォルトでかかってるpadding-leftがクソダサいので削除
-     段落自体は幅を詰めるほうが読みやすそうなので.container > pで対応
-  */
+  /* デフォルトでかかってるpadding-leftがクソダサいので削除 */
   padding: 26px 0px;
 }
 
-section.container > p {
-  padding-left: 8px;
-}
-
 section.container > pre {
-  /* preブロックはキツめにかける(section.container > pの8px + font-sizeの16px分) */
-  padding-left: 24px;
+  /* preブロックはキツめにかける(font-sizeの16px分) */
+  padding-left: 16px;
 }
 
 p {
@@ -37,16 +31,27 @@ p {
 
   /* 16 * 1.618 ≒ 26px なので、Vertical Rhythmも13px単位で計算　*/
   line-height: 26px;
-  margin: 13px 0;
+  margin: 26px 0;
   text-align: justify;
   letter-spacing: 0.25px;
+}
 
-  /* pの横幅が長いと読むのがしんどいので適当に詰める
-     (section.containerのwidthを変更するほうが良いのだろうか…？)
-     section.container > pのpadding-leftを8px paddingで統一したいので
-     ここでは右余白を切り詰めることで対応
-   */
-  padding-right: 48px;
+@media screen and (min-width: 1280px) {
+  /* 文章の横幅が長いと読むのがしんどいので適当に詰める */
+  p {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* 画面が小さいと横幅狭すぎて読みにくいので全体にpadding */
+  article.container {
+    padding: 0 32px;
+  }
+
+  p {
+    padding-right: 8px;
+  }
 }
 
 pre {
