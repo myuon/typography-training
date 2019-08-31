@@ -49,10 +49,6 @@ p {
   article.container {
     padding: 0 32px;
   }
-
-  p {
-    padding-right: 8px;
-  }
 }
 
 pre {
